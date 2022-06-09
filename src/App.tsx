@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import TextInput from './Components/TextInput/TextInput';
 import letterToMorse from './Components/LetterToMorseCode/LetterToMorse';
-
+import morseToLetter from './Components/morseToLetter/morseToLetter';
 import { Switch } from '@mui/material';
 
 function App() {
@@ -29,7 +29,11 @@ function App() {
   }
 
   useEffect(()=> {
-    setOutput(letterToMorse(userInput))
+    if (!wordToMorse){
+    setOutput(letterToMorse(userInput));
+  } else {
+    setOutput(morseToLetter(userInput))    
+  }
   }, [userInput])
 
   return (
