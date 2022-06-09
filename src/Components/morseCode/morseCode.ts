@@ -1,7 +1,5 @@
-export {}
-
 type morseDictionary = {
-    [key: string | number]: string;
+    [key: string]: string;
 }
 
 const morseAlphabetDictionary: morseDictionary = {
@@ -34,16 +32,16 @@ const morseAlphabetDictionary: morseDictionary = {
 }
 
 const morseNumberDictionary: morseDictionary = {
-0: '-----',
-1: '.----',
-2: '..---',
-3: '...--',
-4: '....-',
-5: '.....',
-6: '-....',
-7: '--...',
-8: '---..',
-9: '----.',
+'0': '-----',
+'1': '.----',
+'2': '..---',
+'3': '...--',
+'4': '....-',
+'5': '.....',
+'6': '-....',
+'7': '--...',
+'8': '---..',
+'9': '----.',
 }
 
 const morseSymbolDictionary: morseDictionary = {
@@ -67,3 +65,6 @@ const morseSymbolDictionary: morseDictionary = {
     '@': '.--.-.',
     ' ': '/'
 }
+
+const morseDictionary = {morseAlphabetDictionary, morseNumberDictionary,morseSymbolDictionary }
+export {morseDictionary}
