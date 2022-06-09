@@ -16,13 +16,16 @@ const morseToLetter = (input: string): string => {
 
     let newString: string ='';
 
-    // warning: Function declared in a loop contains unsafe references to variable(s) 'newString'
+    console.log(inputArray)    
+
     for (let i=0; i < inputArray.length; i++) {
             if (morseCodeValue.indexOf(inputArray[i]) > -1) {
                 let indexOfChara: number = morseCodeValue.indexOf(inputArray[i]) 
-                newString += i === (inputArray.length - 1) ? morseCodeKey[indexOfChara] : morseCodeKey[indexOfChara] + ' ';
+                newString += morseCodeKey[indexOfChara];
 
-            }  else {
+            } else if (i === (inputArray.length - 1) && inputArray[i].length === 0) {
+                newString += ' ';
+            } else {
                 newString = 'Invalid input detected.'
                 break;
             }
