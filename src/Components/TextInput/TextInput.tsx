@@ -21,7 +21,7 @@ const  TextInput = (props: Props) => {
       if (updateInput){
         updateInput(input)
       }
-    }, [input])
+    }, [input, updateInput])
 
     return (
         <TextField

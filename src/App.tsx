@@ -34,7 +34,7 @@ function App() {
   } else {
     setOutput(morseToLetter(userInput))    
   }
-  }, [userInput])
+  }, [userInput, wordToMorse])
 
   return (
     <div className="App">
