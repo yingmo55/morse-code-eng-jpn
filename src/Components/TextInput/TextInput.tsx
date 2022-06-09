@@ -1,22 +1,27 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField } from '@mui/material';
 
 interface Props {
   label: string;
   readOnly: boolean;
   placeholder?: string;
-  // output?: string;
+  output?: string;
+  updateInput?: (input: string) => void;
 }
 
 const  TextInput = (props: Props) => {
-    const [input, setInput] = useState<string>('');
-    const {label, readOnly} = props;
-
-    const output = 'test output'
+    const [ input, setInput ] = useState<string>('');
+    const { label, readOnly, updateInput, output } = props;
 
     const handleTextInput = (e:any) => {
       setInput(e.target.value)
     }
+
+    useEffect(()=> {
+      if (updateInput){
+        updateInput(input)
+      }
+    }, [input])
 
     return (
         <TextField
