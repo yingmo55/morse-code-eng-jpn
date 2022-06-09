@@ -66,5 +66,63 @@ const morseSymbolDictionary: morseDictionary = {
     ' ': '/'
 }
 
-const morseDictionary = {morseAlphabetDictionary, morseNumberDictionary,morseSymbolDictionary }
-export {morseDictionary}
+// in iroha order
+const morseJpnDictionary: morseDictionary = {
+'イ': '.-',
+'ロ': '.-.-',
+'ハ': '-...',
+'ニ': '-.-.',
+'ホ': '-..',
+'ヘ': '.',
+'ト': '..-..',
+'チ': '..-.',
+'リ': '--.',
+'ヌ': '....',
+'ル': '-.--.',
+'ヲ': '.---',
+'ワ': '-.-',
+'カ': '.-..',
+'ヨ': '--',
+'タ': '-.',
+'レ': '---',
+'ソ': '---.',
+'ツ': '.--.',
+'ネ': '--.-',
+'ナ': '.-.',
+'ラ': '...',
+'ム': '-',
+'ウ': '..-',
+'ヰ': '.-..-',
+'ノ': '..--',
+'オ': '.-...',
+'ク': '...-',
+'ヤ': '.--',
+'マ': '-..-',
+'ケ': '-.--',
+'フ': '--..',
+'コ': '----',
+'エ': '-.---',
+'テ': '.-.--',
+'ア': '--.--',
+'サ': '-.-.-',
+'キ': '-.-..',
+'ユ': '-..--',
+'メ': '-...-',
+'ミ': '..-.-',
+'シ': '--.-.',
+'ヱ': '.--..',
+'匕': '--..-',
+'モ': '-..-.',
+'セ': '.---.',
+'ス': '---.-',
+'ン': '.-.-.',
+'゛': '..',
+'゜': '..--.'
+}
+
+const morseJpnSymbolDictionary = {
+    'ー': '.--.-',
+    '、': '.-.-.-'
+}
+
+export { morseAlphabetDictionary, morseNumberDictionary,morseSymbolDictionary, morseJpnDictionary, morseJpnSymbolDictionary }
