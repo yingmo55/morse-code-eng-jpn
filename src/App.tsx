@@ -36,6 +36,12 @@ function App() {
   }
   }, [userInput, wordToMorse])
 
+
+  useEffect(()=>{
+    const newInput = output;
+    setUserInput(newInput)
+  }, [wordToMorse])
+
   return (
     <div className="App">
       <header>
