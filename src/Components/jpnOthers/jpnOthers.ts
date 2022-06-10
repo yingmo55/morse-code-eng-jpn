@@ -1,5 +1,3 @@
-export {}
-
 type Kana = {
     [kanaName: string]: string;
 }
@@ -52,3 +50,4 @@ const hanDakuon: Dakuon = {
     'ポ': ['ホ', '゜']
 }
 
+export { sutegana, dakuon, hanDakuon}
