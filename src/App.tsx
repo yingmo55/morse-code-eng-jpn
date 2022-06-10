@@ -38,8 +38,10 @@ function App() {
 
 
   useEffect(()=>{
+    if (output){
     const newInput = output;
     setUserInput(newInput)
+  }
   }, [wordToMorse])
 
   return (
