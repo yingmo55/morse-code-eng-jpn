@@ -125,10 +125,4 @@ const morseJpnSymbolDictionary = {
     '、': '.-.-.-'
 }
 
-const sutegana: string[] = ['ャ', 'ュ', 'ョ', 'ッ', 'ァ', 'ィ', 'ゥ', 'ェ', 'ォ'];
-
-const dakuon: string[] = ['ガ', 'ギ', 'グ', 'ゲ', 'ゴ', 'ダ', 'ヂ', 'ヅ', 'デ', 'ド', 'ザ', 'ジ', 'ズ', 'ゼ', 'ゾ', 'バ', 'ビ', 'ブ', 'ベ', 'ボ', 'ヴ']
-
-const hanDakuon: string[] = [ 'パ', 'ピ', 'プ', 'ペ', 'ポ']
-
 export { morseAlphabetDictionary, morseNumberDictionary,morseSymbolDictionary, morseJpnDictionary, morseJpnSymbolDictionary }
