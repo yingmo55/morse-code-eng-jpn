@@ -46,20 +46,18 @@ function App() {
         Switch to English
         <Switch {...label}
         checked={engOrJpn} 
-        onChange={toggleLanguage}
-        defaultChecked />
+        onChange={toggleLanguage} />
         Switch to Japanese
       </div>
       <div>
         {!engOrJpn? 'English' : 'Japanese'} to Morse
         <Switch {...label} 
         checked={wordToMorse} 
-        onChange={toggleWordToMorse}
-        defaultChecked />
+        onChange={toggleWordToMorse} />
         Morse to {!engOrJpn? 'English' : 'Japanese'}
         <p>currently: {!engOrJpn? 'English' : 'Japanese'} </p>
       </div>
-      <TextInput label={'Input'} readOnly={false} updateInput={updateInput} />
+      <TextInput label={'Input'} readOnly={false} updateInput={updateInput} input={userInput} />
       <TextInput label={'Output'} readOnly={true} output={output} />
     </div>
   );
