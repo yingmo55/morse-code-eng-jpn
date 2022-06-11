@@ -30,7 +30,7 @@ function App() {
 
   useEffect(()=> {
     if (!wordToMorse){
-    setOutput(letterToMorse(userInput));
+    setOutput(letterToMorse(userInput, engOrJpn));
   } else {
     setOutput(morseToLetter(userInput))    
   }
@@ -38,10 +38,8 @@ function App() {
 
 
   useEffect(()=>{
-    if (output){
     const newInput = output;
     setUserInput(newInput)
-  }
   }, [wordToMorse])
 
   return (
