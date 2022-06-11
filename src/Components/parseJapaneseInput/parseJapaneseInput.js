@@ -1,14 +1,22 @@
 import * as wanakana from 'wanakana';
 import { sutegana, dakuon, hanDakuon} from '../jpnOthers/jpnOthers';
+import { morseJpnSymbolDictionary } from '../morseCode/morseCode';
 
 function parseJapaneseInput(input) {
     let result;
     let finalResult = '';
+    let specialChar = Object.keys(morseJpnSymbolDictionary);
+
     if (!wanakana.isJapanese(input)) {
+
         return 'Invalid input. This is not Japanese.'
     }
-    if (!wanakana.isKana(input)){
-        return 'Invalid input. This app does not support Kanji input yet.'
+    
+    // to verify if there are any invalid character 
+    for (let char of input) {
+        if (!wanakana.isKana(char) && !specialChar.includes(char)){
+            return 'Invalid input. This app does not support Kanji input yet, or you input a special character that is not supported.'
+        }
     }
     result = wanakana.toKatakana(input, { useObsoleteKana: true })
 
