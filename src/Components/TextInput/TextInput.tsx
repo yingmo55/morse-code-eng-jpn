@@ -1,27 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { TextField } from '@mui/material';
 
 interface Props {
   label: string;
   readOnly: boolean;
   placeholder?: string;
+  input?: string;
   output?: string;
   updateInput?: (input: string) => void;
 }
 
 const  TextInput = (props: Props) => {
-    const [ input, setInput ] = useState<string>('');
-    const { label, readOnly, updateInput, output } = props;
+    // const [ input, setInput ] = useState<string>('');
+    const { label, readOnly, updateInput, input, output } = props;
 
-    const handleTextInput = (e:any) => {
-      setInput(e.target.value)
-    }
-
-    useEffect(()=> {
-      if (updateInput){
-        updateInput(input)
+    const handleInput = (e:any) => {
+      e.preventDefault(); 
+      if(updateInput) {
+        updateInput(e.target.value)
       }
-    }, [input, updateInput])
+    }
 
     return (
         <TextField
@@ -36,7 +34,7 @@ const  TextInput = (props: Props) => {
         margin="normal"
         placeholder="type something here (. as dot, - as dash. empty space for space)"
         value={!readOnly ? input: output}
-        onChange={handleTextInput}
+        onChange={handleInput}
       />
     )
 }
