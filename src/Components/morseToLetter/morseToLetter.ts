@@ -1,15 +1,24 @@
-import { morseAlphabetDictionary, morseNumberDictionary,morseSymbolDictionary } from "../morseCode/morseCode";
+import { morseAlphabetDictionary, morseNumberDictionary,morseSymbolDictionary, morseJpnDictionary, morseJpnSymbolDictionary } from "../morseCode/morseCode";
 
-const morseToLetter = (input: string): string => {
+
+const morseToLetter = (input: string, isJapanese: boolean): string => {
     type keyValue = string[];
 
     const engMorseDictionary = {
         ...morseAlphabetDictionary,
         ...morseNumberDictionary,
-        ...morseSymbolDictionary}
+        ...morseSymbolDictionary
+    }
+    const jpnMorseDictionary = {
+        ...morseJpnDictionary,
+        ...morseJpnSymbolDictionary
+    }
 
-    const morseCodeKey: keyValue = Object.keys(engMorseDictionary);
-    const morseCodeValue: keyValue = Object.values(engMorseDictionary);
+    let dictionary = isJapanese ? jpnMorseDictionary : engMorseDictionary;
+    
+
+    const morseCodeKey: keyValue = Object.keys(dictionary);
+    const morseCodeValue: keyValue = Object.values(dictionary);
 
     let newString: string ='';
 
