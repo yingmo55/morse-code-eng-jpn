@@ -1,8 +1,8 @@
-type morseDictionary = {
+type MorseDictionary = {
     [key: string]: string;
 }
 
-const morseAlphabetDictionary: morseDictionary = {
+const morseAlphabetDictionary: MorseDictionary = {
 'A': '.-',
 'B': '-...',
 'C': '-.-.',
@@ -31,7 +31,7 @@ const morseAlphabetDictionary: morseDictionary = {
 'Z': '--..'
 }
 
-const morseNumberDictionary: morseDictionary = {
+const morseNumberDictionary: MorseDictionary = {
 '0': '-----',
 '1': '.----',
 '2': '..---',
@@ -44,7 +44,7 @@ const morseNumberDictionary: morseDictionary = {
 '9': '----.',
 }
 
-const morseSymbolDictionary: morseDictionary = {
+const morseSymbolDictionary: MorseDictionary = {
     '.': '.-.-.-',
     ',': '--..--',
     '?': '..--..',
@@ -67,7 +67,7 @@ const morseSymbolDictionary: morseDictionary = {
 }
 
 // in iroha order
-const morseJpnDictionary: morseDictionary = {
+const morseJpnDictionary: MorseDictionary = {
 'イ': '.-',
 'ロ': '.-.-',
 'ハ': '-...',
@@ -120,9 +120,12 @@ const morseJpnDictionary: morseDictionary = {
 '゜': '..--.'
 }
 
-const morseJpnSymbolDictionary = {
+const morseJpnSymbolDictionary: MorseDictionary = {
     'ー': '.--.-',
-    '、': '.-.-.-'
+    '、': '.-.-.-',
+    '。': '.-.-..',
+    '（': '-.--.-',
+    '）': '.-..-.'
 }
 
 export { morseAlphabetDictionary, morseNumberDictionary,morseSymbolDictionary, morseJpnDictionary, morseJpnSymbolDictionary }

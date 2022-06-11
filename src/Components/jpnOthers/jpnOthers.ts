@@ -50,4 +50,4 @@ const hanDakuon: Dakuon = {
     'ポ': ['ホ', '゜']
 }
 
-export { sutegana, dakuon, hanDakuon}
+export { sutegana, dakuon, hanDakuon }
