@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import TextInput from './Components/TextInput/TextInput';
-import letterToMorse from './Components/LetterToMorseCode/LetterToMorse';
+import letterToMorse from './Components/letterToMorse/letterToMorse';
 import morseToLetter from './Components/morseToLetter/morseToLetter';
 import { Switch } from '@mui/material';
 
