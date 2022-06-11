@@ -32,7 +32,7 @@ function App() {
     if (!wordToMorse){
     setOutput(letterToMorse(userInput, engOrJpn));
   } else {
-    setOutput(morseToLetter(userInput))    
+    setOutput(morseToLetter(userInput, engOrJpn))    
   }
   }, [userInput, wordToMorse])
 

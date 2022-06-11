@@ -1,5 +1,5 @@
 import { morseAlphabetDictionary, morseNumberDictionary,morseSymbolDictionary, morseJpnDictionary, morseJpnSymbolDictionary } from "../morseCode/morseCode";
-
+import parseJpnOutput from '../parseJpnOutput/parseJpnOutput';
 
 const morseToLetter = (input: string, isJapanese: boolean): string => {
     type keyValue = string[];
@@ -38,6 +38,10 @@ const morseToLetter = (input: string, isJapanese: boolean): string => {
             }
 
         }
+    }
+
+    if (isJapanese) {
+        newString = parseJpnOutput(newString);
     }
 
     return newString;
