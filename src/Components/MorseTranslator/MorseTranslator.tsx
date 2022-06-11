@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import './MorseTranslator.css';
+
 import TextInput from '../TextInput/';
 import letterToMorse from '../letterToMorse';
 import morseToLetter from '../morseToLetter';
@@ -56,10 +58,13 @@ function MorseTranslator() {
                     checked={wordToMorse} 
                     onChange={toggleWordToMorse}
                     ariaLabel='switch between Morse code or text input'  />
-        <p>currently: {!wordToMorse ? !engOrJpn? 'English' : 'Japanese' : 'Morse' } to { !wordToMorse ? 'Morse' : !engOrJpn? 'English' : 'Japanese' }  </p>
-
-      <TextInput label={'Input'} readOnly={false} updateInput={updateInput} input={userInput} />
-      <TextInput label={'Output'} readOnly={true} output={output} />
+      
+      <p>currently: {!wordToMorse ? !engOrJpn? 'English' : 'Japanese' : 'Morse' } to { !wordToMorse ? 'Morse' : !engOrJpn? 'English' : 'Japanese' }  </p>
+    
+      <div className='textfields'>
+        <TextInput label={'Input'} readOnly={false} updateInput={updateInput} input={userInput} />
+        <TextInput label={'Output'} readOnly={true} output={output} />
+      </div>
     </>
   );
 }
