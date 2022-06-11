@@ -1,5 +1,5 @@
 import { morseAlphabetDictionary, morseNumberDictionary,morseSymbolDictionary, morseJpnDictionary, morseJpnSymbolDictionary } from "../morseCode/morseCode";
-import parseJapaneseInput from "../parseJapaneseInput/parseJapaneseInput";
+import parseJpnInput from "../parseJpnInput/parseJpnInput";
 
 const letterToMorse = (input: string, isJapanese: boolean): string => {
     // isJapanese: false if English, True if Japanese
@@ -16,7 +16,7 @@ const letterToMorse = (input: string, isJapanese: boolean): string => {
     let dictionary = isJapanese ? jpnMorseDictionary : engMorseDictionary;
     
     // sanitize input before translating
-    input = isJapanese ? parseJapaneseInput(input) : input.toUpperCase()
+    input = isJapanese ? parseJpnInput(input) : input.toUpperCase()
 
     let newString: string ='';
 

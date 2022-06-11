@@ -2,7 +2,7 @@ import * as wanakana from 'wanakana';
 import { sutegana, dakuon, hanDakuon} from '../jpnOthers/jpnOthers';
 import { morseJpnSymbolDictionary } from '../morseCode/morseCode';
 
-function parseJapaneseInput(input) {
+function parseJpnInput(input) {
     let result;
     let finalResult = '';
     let specialChar = Object.keys(morseJpnSymbolDictionary);
@@ -59,4 +59,4 @@ function parseJapaneseInput(input) {
     return finalResult;
 }
 
-export default parseJapaneseInput;
+export default parseJpnInput;
