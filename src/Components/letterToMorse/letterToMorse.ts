@@ -2,6 +2,11 @@ import { morseAlphabetDictionary, morseNumberDictionary,morseSymbolDictionary, m
 import parseJpnInput from "../parseJpnInput/parseJpnInput";
 
 const letterToMorse = (input: string, isJapanese: boolean): string => {
+
+    if (!input){
+        return '';
+    }
+    
     // isJapanese: false if English, True if Japanese
     const engMorseDictionary = {
         ...morseAlphabetDictionary,
