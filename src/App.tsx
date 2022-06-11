@@ -22,6 +22,7 @@ function App() {
 
   const toggleLanguage = () : void => {
     setEngOrJpn((prev)=> !prev)
+
   }
 
   const toggleWordToMorse = (): void => {
@@ -41,6 +42,10 @@ function App() {
     const newInput = output;
     setUserInput(newInput)
   }, [wordToMorse])
+
+  useEffect(()=>{
+    setUserInput('');
+  }, [engOrJpn])
 
   return (
     <div className="App">
