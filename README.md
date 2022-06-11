@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# Morse Code Translator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Morse code translator web app that supports English and Japanese input.
+<hr />
 
-## Available Scripts
+**Main Site:** [🔗live](https://morse-code-deencoder.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/55c9d4a7-7b27-4a8e-a678-2677fef1f7b1/deploy-status)](https://app.netlify.com/sites/morse-code-deencoder/deploys)
 
-In the project directory, you can run:
+**Develop Branch:** [🔗live](https://morse-code-deencoder-dev.netlify.app//)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/db150383-6995-4308-85f9-c3b1511d059d/deploy-status)](https://app.netlify.com/sites/morse-code-deencoder-dev/deploys)
 
-### `yarn start`
+## About
+This web app accepts input in both English and Japanese and converts inputs into Morse code. User can also input Morse code (with period `.` as dot or dit, and dash `-` as dash or dah) and it will be convert to the corresponding language.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For Japanese input, it currently accepts both Hiragana and Katakana input. User can also uses [sutegana](https://en.wiktionary.org/wiki/sutegana) /hatsuon /yo-on (such as "っ", "ゃ". Sutegana in following text) in the input. They will be convert to their corresponding full-size kana for converting to Morse code.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+(Official Japanese Morse code does not support sutegana by default. One would need to interpret the translated text by context. [Google's Morse Code version of Japanese input method](https://www.google.co.jp/ime/-.-.html) solves this problem by attaching the handakuon symbol after a kana to indicate it is a sutegana, but to my knowledge, this is not standard practice.)
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Languages, Frameworks, and Libraries Used
+- Language: TypeScript, CSS 
+- [React](https://reactjs.org/) 
+- [Material UI](https://mui.com/) for styling
+- [wanakana](https://github.com/WaniKani/WanaKana) by WaniKani for parsing Japanese inputs
+- Deployed with Netlify
 
-### `yarn build`
+## Installing
+To run this project locally:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Prerequisite:
+- node
+- yarn (package manager)
+- git (version control)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. `git clone git@github.com:yingmo55/morse-code-eng-jpn.git` in the terminal
+2. `cd (folder-name)` and enter the directory
+3. `yarn install` to install the dependencies needed
+4. `yarn start` to start this project at your local server (default port: 3000), 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Road Map
+While the core features are implemented, there are still improvements to make for this project.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [ ] Update metadata such as Website title and logos (!important)
+- [ ] Add button to copy output to user's clipboard
+- [ ] Add support for more dots and dashes inputs for Morse code  (such as `•` and `－` )
+- [ ] Add testing by using Cypress to ensure all functions work fine
