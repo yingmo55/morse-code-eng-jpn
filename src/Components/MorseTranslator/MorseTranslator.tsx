@@ -3,7 +3,7 @@ import TextInput from '../TextInput/';
 import letterToMorse from '../letterToMorse';
 import morseToLetter from '../morseToLetter';
 
-import { Switch } from '@mui/material';
+import ToggleSwitch from '../ToggleSwitch';
 
 function MorseTranslator() {
 
@@ -14,8 +14,6 @@ function MorseTranslator() {
   //engOrJpn: ENG if false, JPN if true. Default: false
   const [ engOrJpn, setEngOrJpn ] = useState<boolean>(false)
 
-
-  const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
   const updateInput = (input:string) => {
     setUserInput(input)
@@ -48,21 +46,18 @@ function MorseTranslator() {
 
   return (
     <>
-      <div>
-        <span>Switch to English</span>
-        <Switch {...label}
-        checked={engOrJpn} 
-        onChange={toggleLanguage} />
-        <span>Switch to Japanese</span>
-      </div>
-      <div>
-        <span>{!engOrJpn? 'English' : 'Japanese'} to Morse</span>
-        <Switch {...label} 
-        checked={wordToMorse} 
-        onChange={toggleWordToMorse} />
-        <span>Morse to {!engOrJpn? 'English' : 'Japanese'}</span>
+      <ToggleSwitch switchLabel1={'Switch to English'} 
+                    switchLabel2={'Switch to Japanese'} 
+                    checked={engOrJpn} 
+                    onChange={toggleLanguage}
+                    ariaLabel='switch between English or Japanese input' />
+      <ToggleSwitch switchLabel1={`${!engOrJpn? 'English' : 'Japanese'} to Morse`} 
+                    switchLabel2={`Morse to ${!engOrJpn? 'English' : 'Japanese'}`} 
+                    checked={wordToMorse} 
+                    onChange={toggleWordToMorse}
+                    ariaLabel='switch between Morse code or text input'  />
         <p>currently: {!wordToMorse ? !engOrJpn? 'English' : 'Japanese' : 'Morse' } to { !wordToMorse ? 'Morse' : !engOrJpn? 'English' : 'Japanese' }  </p>
-      </div>
+
       <TextInput label={'Input'} readOnly={false} updateInput={updateInput} input={userInput} />
       <TextInput label={'Output'} readOnly={true} output={output} />
     </>
