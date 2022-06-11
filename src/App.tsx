@@ -14,6 +14,8 @@ function App() {
   const [ engOrJpn, setEngOrJpn ] = useState<boolean>(false)
   //engOrJpn: ENG if false, JPN if true. Default: false
 
+
+
   const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
   const updateInput = (input:string) => {
@@ -35,13 +37,12 @@ function App() {
   } else {
     setOutput(morseToLetter(userInput, engOrJpn))    
   }
-  }, [userInput, wordToMorse])
-
+  }, [userInput, wordToMorse, engOrJpn])
 
   useEffect(()=>{
-    const newInput = output;
-    setUserInput(newInput)
-  }, [wordToMorse])
+      const newInput = output;
+      setUserInput(newInput)
+  }, [wordToMorse]) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(()=>{
     setUserInput('');
@@ -66,7 +67,7 @@ function App() {
         checked={wordToMorse} 
         onChange={toggleWordToMorse} />
         Morse to {!engOrJpn? 'English' : 'Japanese'}
-        <p>currently: {!engOrJpn? 'English' : 'Japanese'} </p>
+        <p>currently: {!wordToMorse ? !engOrJpn? 'English' : 'Japanese' : 'Morse' } to { !wordToMorse ? 'Morse' : !engOrJpn? 'English' : 'Japanese' }  </p>
       </div>
       <TextInput label={'Input'} readOnly={false} updateInput={updateInput} input={userInput} />
       <TextInput label={'Output'} readOnly={true} output={output} />
