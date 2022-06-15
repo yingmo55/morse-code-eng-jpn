@@ -32,9 +32,9 @@ function MorseTranslator() {
 
   const copyToClipboard = async (): Promise<void> => {
       if (output) {
-        await navigator.clipboard.writeText(output)
-        setIsPopup(true)
+        await navigator.clipboard.writeText(output) 
       }
+      setIsPopup(true)
   }
 
   const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
@@ -51,6 +51,7 @@ function MorseTranslator() {
   } else {
     setOutput(morseToLetter(userInput, engOrJpn))    
   }
+    setIsPopup(false)
   }, [userInput, wordToMorse, engOrJpn])
 
   useEffect(()=>{
@@ -82,8 +83,9 @@ function MorseTranslator() {
         <TextInput label={'Output'} readOnly={true} output={output} />
         <Button variant="contained" onClick={copyToClipboard}>Copy Result to Clipboard</Button>
         <Snackbar open={isPopup} autoHideDuration={6000} onClose={handleClose}>
-          <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-            Copied to clipboard!
+          <Alert onClose={handleClose} severity={output ? "success" : "warning"} sx={{ width: '100%' }}>
+            {output ? 
+            "Copied to clipboard!" : "There's nothing to copy yet!"}
           </Alert>
       </Snackbar>
       </div>
