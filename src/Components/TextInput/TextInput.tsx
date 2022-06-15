@@ -8,11 +8,12 @@ interface Props {
   input?: string;
   output?: string;
   updateInput?: (input: string) => void;
+  name?: string;
 }
 
 const  TextInput = (props: Props) => {
     // const [ input, setInput ] = useState<string>('');
-    const { label, readOnly, updateInput, input, output } = props;
+    const { label, name, readOnly, updateInput, input, output } = props;
 
     const handleInput = (e:any) => {
       e.preventDefault(); 
@@ -31,6 +32,7 @@ const  TextInput = (props: Props) => {
         InputProps={{
           readOnly: readOnly,
         }}
+        name={name}
         margin="normal"
         placeholder="type something here (. as dot, - as dash. empty space for space)"
         value={!readOnly ? input: output}

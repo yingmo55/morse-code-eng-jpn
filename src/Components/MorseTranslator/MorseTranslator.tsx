@@ -79,8 +79,8 @@ function MorseTranslator() {
       <p>currently: {!wordToMorse ? !engOrJpn? 'English' : 'Japanese' : 'Morse' } to { !wordToMorse ? 'Morse' : !engOrJpn? 'English' : 'Japanese' }  </p>
     
       <div className='textfields'>
-        <TextInput label={'Input'} readOnly={false} updateInput={updateInput} input={userInput} />
-        <TextInput label={'Output'} readOnly={true} output={output} />
+        <TextInput label={'Input'} readOnly={false} updateInput={updateInput} input={userInput} name='input' />
+        <TextInput label={'Output'} readOnly={true} output={output} name='output'/>
         <Button variant="contained" onClick={copyToClipboard}>Copy Result to Clipboard</Button>
         <Snackbar open={isPopup} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity={output ? "success" : "warning"} sx={{ width: '100%' }}>
