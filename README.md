@@ -40,7 +40,7 @@ Prerequisite:
 ## Road Map
 While the core features are implemented, there are still improvements to make for this project.
 
-- [ ] Update metadata such as Website title and logos (!important)
+- [x] Update metadata such as Website title and ~~Logos~~ (!important)
 - [ ] Change parseJpnInput.js and parseJpnOutput.js to TypeScript functions
     - [ ] add TypeScript config file for the wanakana library
 - [ ] Add button to copy output to user's clipboard
