@@ -43,7 +43,7 @@ While the core features are implemented, there are still improvements to make fo
 - [x] Update metadata such as Website title and ~~Logos~~ (!important)
 - [ ] Change parseJpnInput.js and parseJpnOutput.js to TypeScript functions
     - [ ] add TypeScript config file for the wanakana library
-- [ ] Add button to copy output to user's clipboard
+- [x] Add button to copy output to user's clipboard
 - [ ] Add support for more dots and dashes inputs for Morse code  (such as `•` and `－` )
 - [ ] Add testing by using Cypress to ensure all functions work fine
 
