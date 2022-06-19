@@ -37,11 +37,15 @@ Prerequisite:
 3. `yarn install` to install the dependencies needed
 4. `yarn start` to start this project at your local server (default port: 3000), 
 
-
 ## Road Map
 While the core features are implemented, there are still improvements to make for this project.
 
-- [ ] Update metadata such as Website title and logos (!important)
-- [ ] Add button to copy output to user's clipboard
+- [x] Update metadata such as Website title and ~~Logos~~ (!important)
+- [ ] Change parseJpnInput.js and parseJpnOutput.js to TypeScript functions
+    - [ ] add TypeScript config file for the wanakana library
+- [x] Add button to copy output to user's clipboard
 - [ ] Add support for more dots and dashes inputs for Morse code  (such as `•` and `－` )
 - [ ] Add testing by using Cypress to ensure all functions work fine
+
+## Contribution, Feedback, & Bug Report
+If you have any feedback for the code base or you would like to add to this project, feel free to do so by submitting a ticket at issues.
